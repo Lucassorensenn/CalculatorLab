@@ -1,0 +1,302 @@
+<ContentPage
+    x:Class="SimpleCalculator.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Padding="{OnPlatform iOS='0,20,0,0'}"
+    BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <Grid
+        Padding="5,0"
+        ColumnSpacing="1"
+        RowSpacing="1">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+        <Label
+            x:Name="result"
+            TranslationX="-170"
+            TranslationY="60"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Padding="30"
+            BackgroundColor="White"
+            FontAttributes="Bold"
+            FontSize="48"
+            HorizontalTextAlignment="End"
+            LineBreakMode="NoWrap"
+            WidthRequest="300"
+            HeightRequest="50"
+            Text="0"
+            TextColor="Black"
+            VerticalTextAlignment="Center" />
+
+        
+
+        <Button
+            x:Name="AC"
+            TranslationX="-120"
+            Grid.Row="1"
+            Grid.ColumnSpan="1"
+            BackgroundColor="LightGrey"
+            Clicked="OnClear"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="C"
+            TextColor="Black" />
+
+
+        <Button
+            x:Name="mod"
+            TranslationX="-715"
+            TranslationY="-0"
+            Grid.Row="1"
+            Grid.Column="2"
+            BackgroundColor="LightGrey"
+            Clicked="OnSquareRoot"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="%"
+            TextColor="Black" />
+
+
+        <Button
+            x:Name="num7"
+            TranslationX="-120"
+            TranslationY="-20"
+            Grid.Row="2"
+            Grid.Column="0"
+            BackgroundColor="DimGray"
+            Clicked="OnNumberSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="7"
+            TextColor="Black" />
+        <Button
+            x:Name="num8"
+            TranslationX="-380"
+            TranslationY="-20"
+            Grid.Row="2"
+            Grid.Column="1"
+            BackgroundColor="DimGray"
+            Clicked="OnNumberSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="8"
+            TextColor="Black" />
+        <Button
+            x:Name="num9"
+            TranslationX="-640"
+            TranslationY="-20"
+            Grid.Row="2"
+            Grid.Column="2"
+            BackgroundColor="DimGray"
+            Clicked="OnNumberSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="9"
+            TextColor="Black" />
+
+
+        <Button
+            x:Name="num4"
+            TranslationX="-120"
+            TranslationY="-40"
+            Grid.Row="3"
+            Grid.Column="0"
+            BackgroundColor="DimGray"
+            Clicked="OnNumberSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="4"
+            TextColor="Black" />
+        <Button
+            x:Name="num5"
+            TranslationX="-380"
+            TranslationY="-40"
+            Grid.Row="3"
+            Grid.Column="1"
+            BackgroundColor="DimGray"
+            Clicked="OnNumberSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="5"
+            TextColor="Black" />
+        <Button
+            x:Name="num6"
+            TranslationX="-640"
+            TranslationY="-40"
+            Grid.Row="3"
+            Grid.Column="2"
+            BackgroundColor="DimGray"
+            Clicked="OnNumberSelection"
+           CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="6"
+            TextColor="Black" />
+
+
+        <Button
+            x:Name="num1"
+            TranslationX="-120"
+            TranslationY="-60"
+            Grid.Row="4"
+            Grid.Column="0"
+            BackgroundColor="DimGray"
+            Clicked="OnNumberSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="1"
+            TextColor="Black" />
+        <Button
+            x:Name="num2"
+            TranslationX="-380"
+            TranslationY="-60"
+            Grid.Row="4"
+            Grid.Column="1"
+            BackgroundColor="DimGray"
+            Clicked="OnNumberSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="2"
+            TextColor="Black" />
+
+        <Button
+            x:Name="num3"
+            TranslationX="-640"
+            TranslationY="-60"
+            Grid.Row="4"
+            Grid.Column="2"
+            BackgroundColor="DimGray"
+            Clicked="OnNumberSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="3"
+            TextColor="Black" />
+        <Button
+            x:Name="num0"
+            TranslationX="-380"
+            TranslationY="-80"
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            BackgroundColor="DimGray"
+            Clicked="OnNumberSelection"
+            CornerRadius="50"
+            WidthRequest="250"
+            HeightRequest="75"
+            FontSize="36"
+            Text="0"
+            TextColor="Black" />
+
+
+        <Button
+            x:Name="div"
+            TranslationX="-975"
+            TranslationY="0"
+            Grid.Row="1"
+            Grid.Column="3"
+            BackgroundColor="Orange"
+            Clicked="onOperatorSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="/"
+            TextColor="White" />
+        <Button
+            x:Name="multi"
+            TranslationX="-895"
+            TranslationY="-100"
+            Grid.Row="2"
+            Grid.Column="3"
+            BackgroundColor="Orange"
+            Clicked="onOperatorSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="x"
+            TextColor="White" />
+        <Button
+            x:Name="minus"
+            TranslationX="-896"
+            TranslationY="-120"
+            Grid.Row="3"
+            Grid.Column="3"
+            BackgroundColor="Orange"
+            Clicked="onOperatorSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="-"
+            TextColor="White" />
+        <Button
+            x:Name="add"
+            TranslationX="-896"
+            TranslationY="-140"
+            Grid.Row="4"
+            Grid.Column="3"
+            BackgroundColor="Orange"
+            Clicked="onOperatorSelection"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="+"
+            TextColor="White" />
+        <Button
+            x:Name="equal"
+            TranslationX="-896"
+            TranslationY="-160"
+            Grid.Row="5"
+            Grid.Column="3"
+            BackgroundColor="Orange"
+            Clicked="onCalculate"
+            CornerRadius="50"
+            WidthRequest="75"
+            HeightRequest="75"
+            FontSize="36"
+            Text="="
+            TextColor="White" />
+    </Grid>
+
+
+</ContentPage>
